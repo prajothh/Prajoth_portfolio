@@ -153,6 +153,7 @@ export function Contact() {
               <FloatingField
                 id="name"
                 label="Your name"
+                placeholder="Jane Doe"
                 icon={FiUser}
                 value={form.name}
                 onChange={onChange}
@@ -162,6 +163,7 @@ export function Contact() {
                 id="email"
                 type="email"
                 label="Your email"
+                placeholder="you@company.com"
                 icon={FiMail}
                 value={form.email}
                 onChange={onChange}
@@ -172,6 +174,7 @@ export function Contact() {
             <FloatingField
               id="subject"
               label="Subject"
+              placeholder="What's this about?"
               icon={FiMessageCircle}
               value={form.subject}
               onChange={onChange}
@@ -179,7 +182,8 @@ export function Contact() {
 
             <FloatingField
               id="message"
-              label="Tell me about your project..."
+              label="Message"
+              placeholder="Tell me about your project..."
               multiline
               value={form.message}
               onChange={onChange}
@@ -216,14 +220,15 @@ export function Contact() {
   );
 }
 
-/* -------------- Floating input field -------------- */
+/* -------------- Labeled input field -------------- */
 
-interface FloatingFieldProps {
+interface FieldProps {
   id: keyof FormState;
   label: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   type?: string;
+  placeholder?: string;
   multiline?: boolean;
   icon?: React.ComponentType<{ className?: string }>;
   required?: boolean;
@@ -235,59 +240,61 @@ function FloatingField({
   value,
   onChange,
   type = "text",
+  placeholder,
   multiline,
   icon: Icon,
   required,
-}: FloatingFieldProps) {
-  const hasValue = value.length > 0;
-
+}: FieldProps) {
   const inputClasses = cn(
-    "peer w-full rounded-xl border border-ink-200 bg-white/70 px-4 py-3 text-sm text-ink-900 placeholder-transparent transition-all focus-ring",
+    "peer block w-full rounded-xl border border-ink-200 bg-white/70 px-4 py-3 text-sm text-ink-900 placeholder:text-ink-400 transition-all focus-ring",
     "focus:border-brand-500 focus:bg-white",
-    "dark:border-ink-800 dark:bg-ink-900/60 dark:text-ink-50 dark:focus:bg-ink-900",
+    "dark:border-ink-800 dark:bg-ink-900/60 dark:text-ink-50 dark:placeholder:text-ink-500 dark:focus:bg-ink-900",
     Icon && "pl-10"
   );
 
   return (
-    <div className="relative">
-      {Icon && (
-        <Icon className="pointer-events-none absolute left-3 top-3.5 h-4 w-4 text-ink-400 peer-focus:text-brand-500" />
-      )}
-      {multiline ? (
-        <textarea
-          id={id}
-          name={id}
-          value={value}
-          onChange={onChange}
-          required={required}
-          rows={5}
-          placeholder={label}
-          className={cn(inputClasses, "resize-none")}
-        />
-      ) : (
-        <input
-          id={id}
-          name={id}
-          type={type}
-          value={value}
-          onChange={onChange}
-          required={required}
-          placeholder={label}
-          className={inputClasses}
-        />
-      )}
+    <div className="space-y-1.5">
       <label
         htmlFor={id}
-        className={cn(
-          "pointer-events-none absolute left-4 top-3 bg-white px-1 text-sm text-ink-400 transition-all dark:bg-ink-900",
-          "peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-brand-500",
-          hasValue && "-top-2.5 text-xs text-brand-500",
-          Icon && !hasValue && "left-10"
-        )}
+        className="flex items-center text-xs font-medium uppercase tracking-wider text-ink-500 dark:text-ink-400"
       >
         {label}
-        {required && <span className="ml-0.5 text-fuchsia-500">*</span>}
+        {required && <span className="ml-1 text-fuchsia-500">*</span>}
       </label>
+
+      <div className="relative">
+        {Icon && (
+          <Icon
+            className={cn(
+              "pointer-events-none absolute left-3 h-4 w-4 text-ink-400 transition-colors peer-focus:text-brand-500",
+              multiline ? "top-3.5" : "top-1/2 -translate-y-1/2"
+            )}
+          />
+        )}
+        {multiline ? (
+          <textarea
+            id={id}
+            name={id}
+            value={value}
+            onChange={onChange}
+            required={required}
+            rows={5}
+            placeholder={placeholder ?? label}
+            className={cn(inputClasses, "resize-none")}
+          />
+        ) : (
+          <input
+            id={id}
+            name={id}
+            type={type}
+            value={value}
+            onChange={onChange}
+            required={required}
+            placeholder={placeholder ?? label}
+            className={inputClasses}
+          />
+        )}
+      </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 # Prajoth Kamble — .NET Full Stack Developer Portfolio
 
-Portfolio site for **Prajoth Kamble**, a .NET Full Stack Developer based in Pune with 3.5+ years of experience building scalable enterprise applications using **C#, ASP.NET Core, Web API, Entity Framework Core, SQL Server** and **React.js**.
+Portfolio site for **Prajoth Kamble**, a .NET Full Stack Developer based in Pune with 3.8+ years of experience building scalable enterprise applications and microservices using **C#, ASP.NET Core, Web API, Entity Framework Core, SQL Server, Angular** and **React.js**.
 
 Built with **React + TypeScript + Vite + Tailwind CSS + Framer Motion**.
 

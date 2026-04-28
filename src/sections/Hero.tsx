@@ -61,9 +61,11 @@ export function Hero() {
             className="mt-6 max-w-2xl text-base text-ink-600 dark:text-ink-300 sm:text-lg"
           >
             {SITE.yearsOfExperience} years of experience building secure, scalable enterprise
-            applications with <span className="font-medium text-ink-800 dark:text-ink-100">C#</span>,{" "}
+            applications and microservices with{" "}
+            <span className="font-medium text-ink-800 dark:text-ink-100">C#</span>,{" "}
             <span className="font-medium text-ink-800 dark:text-ink-100">ASP.NET Core</span>,{" "}
-            <span className="font-medium text-ink-800 dark:text-ink-100">Web API</span> and{" "}
+            <span className="font-medium text-ink-800 dark:text-ink-100">Web API</span>,{" "}
+            <span className="font-medium text-ink-800 dark:text-ink-100">Angular</span> and{" "}
             <span className="font-medium text-ink-800 dark:text-ink-100">React.js</span> —
             based in {SITE.location}.
           </motion.p>

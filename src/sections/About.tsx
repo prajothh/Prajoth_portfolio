@@ -5,10 +5,10 @@ import { SITE } from "@/utils/constants";
 import { EDUCATION } from "@/data/experience";
 
 const STATS = [
-  { value: "3.5+", label: "Years of experience" },
-  { value: "2", label: "Enterprise apps" },
-  { value: "10+", label: "Modules shipped" },
-  { value: "40%", label: "Paperwork reduced" },
+  { value: "3.8+", label: "Years of experience" },
+  { value: "2", label: "Enterprise domains" },
+  { value: "40%", label: "DB performance gain" },
+  { value: "10+", label: "Microservices shipped" },
 ];
 
 const VALUES = [
@@ -58,9 +58,9 @@ export function About() {
             <p className="text-base leading-relaxed sm:text-lg">
               I'm a .NET Full Stack Developer based in {SITE.location}. For the
               last {SITE.yearsOfExperience} years I've designed, built and
-              deployed scalable enterprise web applications using{" "}
+              deployed scalable enterprise-grade web applications using{" "}
               <span className="font-medium text-ink-800 dark:text-ink-100">
-                C#, ASP.NET Core, Web API, React.js
+                C#, ASP.NET Core, Web API, Angular, React.js
               </span>{" "}
               and{" "}
               <span className="font-medium text-ink-800 dark:text-ink-100">
@@ -69,12 +69,16 @@ export function About() {
               .
             </p>
             <p className="text-base leading-relaxed sm:text-lg">
-              My strengths are backend architecture, RESTful API design and
-              database management with Entity Framework Core — with a
-              strong focus on building secure, high-performance applications.
-              I'm experienced with Microservices, JWT auth, SOLID principles,
-              Docker and CI/CD, and I enjoy pairing that with clean, responsive
-              React interfaces in Tailwind, Bootstrap and Material UI.
+              My strengths are{" "}
+              <span className="font-medium text-ink-800 dark:text-ink-100">
+                Microservices Architecture
+              </span>
+              , RESTful API design and database optimization with Entity
+              Framework Core and LINQ — with a strong focus on building secure,
+              high-performance systems. I work daily with JWT &amp; OAuth2,
+              SOLID principles, Docker, Kubernetes, Redis, RabbitMQ and CI/CD
+              on Azure DevOps / GitHub Actions, and I pair that with clean,
+              responsive  React interfaces.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-4">

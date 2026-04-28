@@ -3,9 +3,9 @@ import type { NavLink } from "@/types";
 export const SITE = {
   name: "Prajoth Kamble",
   role: ".NET Full Stack Developer",
-  yearsOfExperience: "3.5+",
+  yearsOfExperience: "3.8+",
   tagline:
-    "I build scalable, secure enterprise web apps with C#, ASP.NET Core and React.",
+    "I build scalable, secure enterprise apps and microservices with C#, ASP.NET Core, Angular and React.",
   email: "prajothkamble16@gmail.com",
   phone: "+91 87668 01375",
   phoneHref: "tel:+918766801375",
